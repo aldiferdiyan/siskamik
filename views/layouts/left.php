@@ -24,7 +24,8 @@
                   ['label' => 'mahasiswa', 'icon' => 'user', 'url' => ['/']],
 
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
-                  ['label' => 'mahasiswa ok', 'icon' => 'user', 'url' => ['/mahasiswa']],
+                  ['label' => 'Mahasiswa', 'icon' => 'user', 'url' => ['/mahasiswa']],
+                  ['label' => 'Pembayaran', 'icon' => 'dollar', 'url' => ['/pembayaran']],
 
                   ['label' => 'Admin', 'icon' => 'user text-danger', 'url' => ['/admin']],
                 ],
