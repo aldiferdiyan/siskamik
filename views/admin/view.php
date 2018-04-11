@@ -6,33 +6,34 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Admin */
 
-$this->title = $model->id;
+$this->title = "View Detail " . $model->username;
 $this->params['breadcrumbs'][] = ['label' => 'Admins', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="admin-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="box">
+  <div class="box-body">
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
+      <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+      <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        'class' => 'btn btn-danger',
+        'data' => [
+          'confirm' => 'Are you sure you want to delete this item?',
+          'method' => 'post',
+        ],
         ]) ?>
-    </p>
+      </p>
 
-    <?= DetailView::widget([
+      <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'username',
-            'password',
-            'nama',
+          'id',
+          'username',
+          'password',
+          'nama',
         ],
-    ]) ?>
+        ]) ?>
+      </div>
 
-</div>
+
+
+    </div>

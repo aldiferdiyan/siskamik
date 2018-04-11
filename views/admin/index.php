@@ -7,30 +7,38 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AdminSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Admins';
+$this->title = 'Admin';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="admin-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Admin', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
+<p>
+  <?= Html::a('Create Admin', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+<div class="box">
+  <div class="box-body">
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+      'dataProvider' => $dataProvider,
+      'filterModel' => $searchModel,
+      'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+        'username',
+        'nama',
 
-            'id',
-            'username',
-            'password',
-            'nama',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => '{delete} {update} {view} ',
+          'buttons'=>[
+            'view' => function ($url, $model, $key) {
+              return Html::a('<i class="fa fa-eye"></i>', ['view','id' => $model->id]);
+            }
+          ]
         ],
+      ],
     ]); ?>
+  </div>
+
+  <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+
+
+
 </div>
