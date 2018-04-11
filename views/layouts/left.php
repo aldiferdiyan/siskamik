@@ -27,7 +27,7 @@
 
           [
             'label' => 'Mahasiswa',
-            'icon' => 'user',
+            'icon' => 'id-card ',
             'url' => ['/mahasiswa'],
             'items' => [
               [
@@ -42,9 +42,9 @@
               ]
             ],
           ],
-          ['label' => 'Nilai', 'icon' => 'book', 'url' => ['/nilai']],
+          ['label' => 'Nilai', 'icon' => 'list-ol', 'url' => ['/nilai']],
           ['label' => 'Jadwal', 'icon' => 'calendar', 'url' => ['/jadwal']],
-          ['label' => 'Mata Kuliah', 'icon' => 'book', 'url' => ['/mata-kuliah']],
+          ['label' => 'Mata Kuliah', 'icon' => 'address-book ', 'url' => ['/mata-kuliah']],
           ['label' => 'Pembayaran', 'icon' => 'dollar', 'url' => ['/pembayaran']],
           ['label' => 'Admin', 'icon' => 'user text-danger', 'url' => ['/admin']],
         ],
