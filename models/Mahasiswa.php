@@ -29,7 +29,7 @@ class Mahasiswa extends \yii\db\ActiveRecord
         return [
             [['nim', 'password', 'nama_lengkap'], 'required'],
             [['nim'], 'string', 'max' => 15],
-            [['password', 'nama_lengkap'], 'string', 'max' => 25],
+            [['password', 'nama_lengkap'], 'string', 'max' => 255],
             [['nim'], 'unique'],
         ];
     }
