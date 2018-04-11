@@ -21,7 +21,7 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                   ['label' => 'Dashboard', 'options' => ['class' => 'header']],
-                  ['label' => 'mahasiswa', 'icon' => 'user', 'url' => ['/']],
+                  ['label' => 'Beranda', 'icon' => 'dashboard', 'url' => ['/']],
 
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
                   ['label' => 'Mahasiswa', 'icon' => 'user', 'url' => ['/mahasiswa']],
