@@ -23,9 +23,6 @@
 <<<<<<< HEAD
                   ['label' => 'Dashboard', 'options' => ['class' => 'header']],
                   ['label' => 'Beranda', 'icon' => 'dashboard', 'url' => ['/']],
-=======
-                  ['label' => 'Menu', 'options' => ['class' => 'header']],
-                  ['label' => 'mahasiswa', 'icon' => 'user', 'url' => ['/']],
 >>>>>>> master
 
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
