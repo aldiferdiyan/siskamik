@@ -21,7 +21,7 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
-                  ['label' => 'mahasiswa ok', 'icon' => 'user', 'url' => ['/mahasiswa']],
+                  ['label' => 'Dashboard', 'icon' => 'dashboard', 'url' => ['/site']],
 
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
