@@ -52,4 +52,19 @@ class Jadwal extends \yii\db\ActiveRecord
             'selesai' => 'Selesai',
         ];
     }
+
+
+    # has one ke table matkul
+    # getMatkul .. untuk pemanggilan cuma di panggil matkul
+    # misal : 
+    #   $jadwal = new Jadwal();
+    #   echo $jadwal->matkul->nama_mata_kuliah;
+    #
+    public function getMatkul()
+    {
+        return $this->hasOne(MataKuliah::className(), ['id' => 'id_matkul']);
+    }
+
+
+    
 }

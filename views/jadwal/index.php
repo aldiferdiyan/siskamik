@@ -16,16 +16,34 @@ $this->params['breadcrumbs'][] = $this->title;
       'filterModel' => $searchModel,
       'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
+        
+
+        # fungsi relasi 
+        [
+          # label yg muncul di list
+          'label' => 'Mata Kuliah',
+          'format' => 'raw',
+          # variable dari JadwalSearch
+          # untuk keperluan Search dan Sorting
+          'attribute'=>'matkul',
+          # nilai yg di print
+          'value' => function($model) {
+            # panggil relasi matkul (getMatkul)
+            $data = $model->matkul->nama_mata_kuliah."<br><small>".$model->mulai." s/d ".$model->selesai."</small>";
+            return $data;
+          },
+        ],
+
 
         'nim',
         'hari',
         'mulai',
-        //'selesai',
+        'selesai',
 
         ['class' => 'yii\grid\ActionColumn'],
       ],
-    ]); ?>
-  </div>
-  <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+      ]); ?>
+    </div>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-</div>
+  </div>

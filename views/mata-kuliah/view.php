@@ -10,10 +10,9 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Mata Kuliahs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mata-kuliah-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="box">
+<div class="box-body">
+ 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -34,4 +33,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+</div>
 </div>

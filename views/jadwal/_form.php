@@ -8,7 +8,8 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="jadwal-form">
+<div class="box">
+<div class="box-body">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -28,4 +29,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

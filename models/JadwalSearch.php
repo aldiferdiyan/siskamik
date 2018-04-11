@@ -11,7 +11,10 @@ use app\models\Jadwal;
  * JadwalSearch represents the model behind the search form of `app\models\Jadwal`.
  */
 class JadwalSearch extends Jadwal
-{
+{   
+    # variable relasi matkul
+    public $matkul;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +22,7 @@ class JadwalSearch extends Jadwal
     {
         return [
             [['id'], 'integer'],
-            [['id_matkul', 'nim', 'hari', 'mulai', 'selesai'], 'safe'],
+            [['id_matkul', 'nim', 'hari', 'mulai', 'selesai','matkul'], 'safe'],
         ];
     }
 
@@ -41,13 +44,22 @@ class JadwalSearch extends Jadwal
      */
     public function search($params)
     {
-        $query = Jadwal::find();
+
+        ## QUERY INNER JOIN BAWAAN YII
+        # BACA DI DOKUMENTASI LENGKAPPPPP
+        $query = Jadwal::find()->innerJoinWith('matkul', true);
 
         // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-        ]);
+
+            ]);
+
+        # tambah fungsi sorting relasi matkul
+        $dataProvider->sort->attributes['matkul'] = [ 
+            'asc' => ['nama_mata_kuliah' => SORT_ASC],
+            'desc' => ['nama_mata_kuliah' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -57,16 +69,20 @@ class JadwalSearch extends Jadwal
             return $dataProvider;
         }
 
-        // grid filtering conditions
+        // filter WHERE 
         $query->andFilterWhere([
             'id' => $this->id,
             'mulai' => $this->mulai,
             'selesai' => $this->selesai,
         ]);
 
-        $query->andFilterWhere(['like', 'id_matkul', $this->id_matkul])
-            ->andFilterWhere(['like', 'nim', $this->nim])
-            ->andFilterWhere(['like', 'hari', $this->hari]);
+        # filtet WHERE LIKE
+        $query->andFilterWhere(['like', 'id_matkul', $this->id_matkul]);
+        $query->andFilterWhere(['like', 'nim', $this->nim]);
+        $query->andFilterWhere(['like', 'hari', $this->hari]);
+
+        # fungsi untuk SEARCH relasi matkul
+        $query->andFilterWhere(['like', 'nama_mata_kuliah', $this->matkul]);
 
         return $dataProvider;
     }

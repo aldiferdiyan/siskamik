@@ -51,9 +51,10 @@ class JadwalController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
-    {
+    {   
+        $jadwal = $this->findModel($id);
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $jadwal,
         ]);
     }
 

@@ -6,14 +6,17 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Jadwal */
 
-$this->title = $model->id;
+# contoh panggil matkul relasi 
+# echo $jadwal->matkul->nama_mata_kuliah;
+
+$this->title = $model->matkul->nama_mata_kuliah;
 $this->params['breadcrumbs'][] = ['label' => 'Jadwals', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="jadwal-view">
+<div class="box">
+    <div class="box-body">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
+ 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -29,7 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'id_matkul',
+            [
+                'label'=>"Matkul",
+                "value"=>$model->matkul->nama_mata_kuliah
+            ],
+            // 'id_matkul',
             'nim',
             'hari',
             'mulai',
@@ -37,4 +44,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+</div>
 </div>
