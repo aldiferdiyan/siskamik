@@ -6,13 +6,12 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mahasiswa */
 
-$this->title = $model->nim;
+$this->title = "View Detail " . $model->nama_lengkap;
 $this->params['breadcrumbs'][] = ['label' => 'Mahasiswas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mahasiswa-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="box">
+  <div class="box-body">
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->nim], ['class' => 'btn btn-primary']) ?>
@@ -34,4 +33,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+</div>
 </div>
