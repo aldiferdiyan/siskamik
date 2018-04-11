@@ -20,13 +20,10 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-<<<<<<< HEAD
-                  ['label' => 'Dashboard', 'options' => ['class' => 'header']],
-                  ['label' => 'Beranda', 'icon' => 'dashboard', 'url' => ['/']],
-=======
+  
                   ['label' => 'Menu', 'options' => ['class' => 'header']],
-                  ['label' => 'mahasiswa', 'icon' => 'user', 'url' => ['/']],
->>>>>>> master
+                  ['label' => 'Beranda', 'icon' => 'dashboard', 'url' => ['/']],
+ 
 
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
                   ['label' => 'Mahasiswa', 'icon' => 'user', 'url' => ['/mahasiswa']],
