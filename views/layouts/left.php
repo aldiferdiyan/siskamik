@@ -26,24 +26,25 @@
           ['label' => 'Menu utama', 'options' => ['class' => 'header']],
 
           [
-            'label' => 'Mahasiswa', 
-            'icon' => 'user', 
+            'label' => 'Mahasiswa',
+            'icon' => 'user',
             'url' => ['/mahasiswa'],
             'items' => [
               [
-                'label' => 'Tambah', 
-                'icon' => 'circle', 
+                'label' => 'Tambah',
+                'icon' => 'circle',
                 'url' => ['/mahasiswa/create'],
               ],
               [
-                'label' => 'Kelola', 
-                'icon' => 'circle', 
+                'label' => 'Kelola',
+                'icon' => 'circle',
                 'url' => ['/mahasiswa/index'],
               ]
             ],
           ],
-
-
+          ['label' => 'Nilai', 'icon' => 'book', 'url' => ['/nilai']],
+          ['label' => 'Jadwal', 'icon' => 'calendar', 'url' => ['/jadwal']],
+          ['label' => 'Mata Kuliah', 'icon' => 'book', 'url' => ['/mata-kuliah']],
           ['label' => 'Pembayaran', 'icon' => 'dollar', 'url' => ['/pembayaran']],
           ['label' => 'Admin', 'icon' => 'user text-danger', 'url' => ['/admin']],
         ],
