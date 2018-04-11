@@ -20,7 +20,7 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                  ['label' => 'Dashboard', 'options' => ['class' => 'header']],
+                  ['label' => 'Menu', 'options' => ['class' => 'header']],
                   ['label' => 'mahasiswa', 'icon' => 'user', 'url' => ['/']],
 
                   ['label' => 'Menu utama', 'options' => ['class' => 'header']],
