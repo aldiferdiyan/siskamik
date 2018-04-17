@@ -7,8 +7,8 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\MataKuliah */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
-<div class="mata-kuliah-form">
+<div class="box">
+<div class="box-body">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -22,4 +22,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>  
 </div>

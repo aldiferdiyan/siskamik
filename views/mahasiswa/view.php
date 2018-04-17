@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
   <div class="box-body">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->nim], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->nim], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Back', ['index'], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->nim], [
             'class' => 'btn btn-danger pull-right',

@@ -10,12 +10,11 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Pembayarans', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pembayaran-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="box">
+<div class="box-body">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Back', ['index'], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger pull-right',
@@ -35,5 +34,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'jumlah_bayar',
         ],
     ]) ?>
-
+</div>
 </div>

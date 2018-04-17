@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-$this->title = 'Jadwals';
+$this->title = 'Jadwal';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <p>

@@ -7,9 +7,8 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Pembayaran */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
-<div class="pembayaran-form">
-
+<div class="box">
+<div class="box-body">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'nim')->textInput(['maxlength' => true]) ?>
@@ -24,4 +23,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

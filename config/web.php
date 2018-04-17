@@ -36,7 +36,7 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer', 
+            'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => true,
         ],
 
@@ -64,15 +64,28 @@ $config = [
 ];
 
 
-if (YII_ENV_DEV) { 
+if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module', 
+        'class' => 'yii\debug\Module',
     ];
-
+    // adminlte_gii_template
+//     $config['modules']['gii'] = [
+//         'class' => 'yii\gii\Module',
+//         'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '192.168.178.20'],
+//         'generators' => [ //here
+//             'crud' => [
+//                 'class' => 'yii\gii\generators\crud\Generator',
+//                 'templates' => [
+//                     'adminlte' => '@vendor/dmstr/yii2-adminlte-asset/gii/templates/crud/simple',
+//                 ]
+//             ]
+//         ],
+//     ];
+// }
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module', 
+        'class' => 'yii\gii\Module',
     ];
 }
 

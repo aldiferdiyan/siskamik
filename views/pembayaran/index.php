@@ -10,27 +10,27 @@ use yii\grid\GridView;
 $this->title = 'Pembayaran';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pembayaran-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Pembayaran', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
+<p>
+  <?= Html::a('Create Pembayaran', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+<div class="box">
+  <div class="box-body">
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+      'dataProvider' => $dataProvider,
+      'filterModel' => $searchModel,
+      'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'nim',
-            'bulan',
-            'jumlah_bayar',
+        'id',
+        'nim',
+        'bulan',
+        'jumlah_bayar',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+        ['class' => 'yii\grid\ActionColumn'],
+      ],
     ]); ?>
+  </div>
 </div>

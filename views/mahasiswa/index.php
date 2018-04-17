@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'view' => function ($url, $model, $key) {
               return Html::a('<i class="fa fa-eye"></i>', ['view','nim' => $model->nim]);
             }
-          ]
+          ],
         ],
       ],
     ]); ?>
