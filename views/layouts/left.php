@@ -22,9 +22,7 @@
         'items' => [
           ['label' => 'Menu', 'options' => ['class' => 'header']],
           ['label' => 'Beranda', 'icon' => 'dashboard', 'url' => ['/']],
-
           ['label' => 'Menu utama', 'options' => ['class' => 'header']],
-
           [
             'label' => 'Mahasiswa',
             'icon' => 'id-card ',
@@ -32,17 +30,33 @@
             'items' => [
               [
                 'label' => 'Tambah',
-                'icon' => 'circle',
+                'icon' => 'circle-o',
                 'url' => ['/mahasiswa/create'],
               ],
               [
                 'label' => 'Kelola',
-                'icon' => 'circle',
+                'icon' => 'circle-o',
                 'url' => ['/mahasiswa/index'],
               ]
             ],
           ],
-          ['label' => 'Nilai', 'icon' => 'list-ol', 'url' => ['/nilai']],
+          [
+            'label' => 'Nilai',
+            'icon' => 'list-ol',
+            'url' => ['/nilai'],
+            'items'=> [
+              [
+                'label'=>'Tambah',
+                'icon'=>'circle',
+                'url'=>['/nilai/create'],
+              ],
+              [
+                'label'=>'Kelola',
+                'icon'=>'circle',
+                'url'=>['/nilai/index'],
+              ]
+            ],
+          ],
           ['label' => 'Jadwal', 'icon' => 'calendar', 'url' => ['/jadwal']],
           ['label' => 'Mata Kuliah', 'icon' => 'address-book ', 'url' => ['/mata-kuliah']],
           ['label' => 'Pembayaran', 'icon' => 'dollar', 'url' => ['/pembayaran']],

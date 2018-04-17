@@ -7,18 +7,14 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NilaiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Nilais';
+$this->title = 'Nilai';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="nilai-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Nilai', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
+<p>
+    <?= Html::a('Create Nilai', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+<div class="box">
+  <div class="box-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -33,4 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+  </div>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 </div>

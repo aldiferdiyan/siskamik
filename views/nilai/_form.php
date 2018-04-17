@@ -7,8 +7,8 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Nilai */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
-<div class="nilai-form">
+<div class="box">
+  <div class="box-body">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -19,9 +19,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nilai')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+      <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
 
+  </div>
 </div>
