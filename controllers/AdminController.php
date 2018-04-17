@@ -67,29 +67,43 @@ class AdminController extends Controller
         $model = new Admin();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+          $model->password = md5($model->password);
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        if ($model->save()){
+          return $this->redirect(['index', 'id' => $model->id]);
+        }
+        return $this->render('create', ['model' => $model,]);
     }
 
-    /**
-     * Updates an existing Admin model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        # fix update password di mahasiswa
+        # jadi jika password lama dan baru sama (tidak di edit)
+        # maka jangan simpan / md5 lg pass nya
+        # terlebih dahulu harus simpan password lama untuk di cek
+        $old_password = $model->password;
+
+        # jika di klik submit : POST
+        if ($model->load(Yii::$app->request->post())) {
+
+            # cek password lama dan baru di sini
+            $new_password = $model->password;
+            if($old_password != $new_password){
+                $model->password = md5($new_password);
+            }
+
+            # simpan dan redirect
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
+        # render views/mahasiswa/update
+        # di dalam file create bisa langsung ambil $model
+        # contoh, panggil nama_lengkap, cukup $model->nama_lengkap
         return $this->render('update', [
             'model' => $model,
         ]);

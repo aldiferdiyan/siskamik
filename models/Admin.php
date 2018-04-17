@@ -30,7 +30,7 @@ class Admin extends \yii\db\ActiveRecord
         return [
             [['username', 'password', 'nama'], 'required'],
             [['username', 'nama'], 'string', 'max' => 20],
-            [['password'], 'string', 'max' => 35],
+            [['password'], 'string', 'max' => 255],
         ];
     }
 
