@@ -66,12 +66,13 @@ class AdminController extends Controller
     {
         $model = new Admin();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
           $model->password = md5($model->password);
+          if ($model->save()){
+            return $this->redirect(['view', 'id' => $model->id]);
+          }
         }
-        if ($model->save()){
-          return $this->redirect(['index', 'id' => $model->id]);
-        }
+
         return $this->render('create', ['model' => $model,]);
     }
 

@@ -26,36 +26,36 @@
           [
             'label' => 'Mahasiswa',
             'icon' => 'id-card ',
-            'url' => ['/mahasiswa'],
-            'items' => [
-              [
-                'label' => 'Tambah',
-                'icon' => 'circle-o',
-                'url' => ['/mahasiswa/create'],
-              ],
-              [
-                'label' => 'Kelola',
-                'icon' => 'circle-o',
-                'url' => ['/mahasiswa/index'],
-              ]
-            ],
+            'url' => ['/mahasiswa/index'],
+            // 'items' => [
+            //   [
+            //     'label' => 'Tambah',
+            //     'icon' => 'circle-o',
+            //     'url' => ['/mahasiswa/create'],
+            //   ],
+            //   [
+            //     'label' => 'Kelola',
+            //     'icon' => 'circle-o',
+            //     'url' => ['/mahasiswa/index'],
+            //   ]
+            // ],
           ],
           [
             'label' => 'Nilai',
             'icon' => 'list-ol',
             'url' => ['/nilai'],
-            'items'=> [
-              [
-                'label'=>'Tambah',
-                'icon'=>'circle',
-                'url'=>['/nilai/create'],
-              ],
-              [
-                'label'=>'Kelola',
-                'icon'=>'circle',
-                'url'=>['/nilai/index'],
-              ]
-            ],
+            // 'items'=> [
+            //   [
+            //     'label'=>'Tambah',
+            //     'icon'=>'circle',
+            //     'url'=>['/nilai/create'],
+            //   ],
+            //   [
+            //     'label'=>'Kelola',
+            //     'icon'=>'circle',
+            //     'url'=>['/nilai/index'],
+            //   ]
+            // ],
           ],
           ['label' => 'Jadwal', 'icon' => 'calendar', 'url' => ['/jadwal']],
           ['label' => 'Mata Kuliah', 'icon' => 'address-book ', 'url' => ['/mata-kuliah']],

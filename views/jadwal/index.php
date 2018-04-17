@@ -16,9 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
       'filterModel' => $searchModel,
       'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
-        
 
-        # fungsi relasi 
+
+        # fungsi relasi
         [
           # label yg muncul di list
           'label' => 'Mata Kuliah',
@@ -29,7 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
           # nilai yg di print
           'value' => function($model) {
             # panggil relasi matkul (getMatkul)
-            $data = $model->matkul->nama_mata_kuliah."<br><small>".$model->mulai." s/d ".$model->selesai."</small>";
+            $data = $model->matkul->nama_mata_kuliah
+            // ."<br><small>".$model->mulai." s/d ".$model->selesai."</small>"
+            ;
             return $data;
           },
         ],
