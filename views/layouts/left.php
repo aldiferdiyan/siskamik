@@ -26,7 +26,7 @@
           [
             'label' => 'Mahasiswa',
             'icon' => 'id-card ',
-            'url' => ['/mahasiswa/index'],
+            'url' => ['/mahasiswa'],
             // 'items' => [
             //   [
             //     'label' => 'Tambah',

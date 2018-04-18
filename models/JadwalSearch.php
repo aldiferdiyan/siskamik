@@ -11,7 +11,7 @@ use app\models\Jadwal;
  * JadwalSearch represents the model behind the search form of `app\models\Jadwal`.
  */
 class JadwalSearch extends Jadwal
-{   
+{
     # variable relasi matkul
     public $matkul;
 
@@ -52,11 +52,13 @@ class JadwalSearch extends Jadwal
         // add conditions that should always apply here
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-
+            'pagination' => [
+              'pageSize' => 7,
+            ],
             ]);
 
         # tambah fungsi sorting relasi matkul
-        $dataProvider->sort->attributes['matkul'] = [ 
+        $dataProvider->sort->attributes['matkul'] = [
             'asc' => ['nama_mata_kuliah' => SORT_ASC],
             'desc' => ['nama_mata_kuliah' => SORT_DESC],
         ];
@@ -69,7 +71,7 @@ class JadwalSearch extends Jadwal
             return $dataProvider;
         }
 
-        // filter WHERE 
+        // filter WHERE
         $query->andFilterWhere([
             'id' => $this->id,
             'mulai' => $this->mulai,

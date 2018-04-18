@@ -1,6 +1,8 @@
 <?php
 use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
+use yii\helpers\Url;
+
 
 ?>
 <div class="content-wrapper">
@@ -36,6 +38,5 @@ use dmstr\widgets\Alert;
 </div>
 
 <footer class="main-footer">
-    <strong>Copyright &copy; <?php echo date("Y");?> <?php echo yii::$app->name;?>.</strong> All rights Reserved.
+    <strong>Copyright &copy; <?php echo date("Y");?> <?php echo yii::$app->name;?>.</strong><a href="<?= Yii::$app->homeUrl ?>"><strong><b>Siskamik V.1</b></strong></a>
 </footer>
- 
