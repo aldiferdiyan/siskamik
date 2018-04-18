@@ -56,7 +56,7 @@ class Jadwal extends \yii\db\ActiveRecord
 
     # has one ke table matkul
     # getMatkul .. untuk pemanggilan cuma di panggil matkul
-    # misal : 
+    # misal :
     #   $jadwal = new Jadwal();
     #   echo $jadwal->matkul->nama_mata_kuliah;
     #
@@ -65,6 +65,11 @@ class Jadwal extends \yii\db\ActiveRecord
         return $this->hasOne(MataKuliah::className(), ['id' => 'id_matkul']);
     }
 
+    public function getMahasiswa()
+    {
+        return $this->hasOne(MataKuliah::className(), ['nim' => 'nim']);
+    }
 
-    
+
+
 }

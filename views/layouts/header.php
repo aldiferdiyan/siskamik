@@ -20,7 +20,7 @@ use yii\helpers\Html;
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                        <img src="<?= $directoryAsset ?>/img/avatar5.png" class="user-image" alt="User Image"/>
                         <span class="hidden-xs"><?php echo \yii::$app->user->identity->username;?></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -34,18 +34,18 @@ use yii\helpers\Html;
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
+                        <!-- <li class="user-body">
                             <div class="col-xs-6 text-center">
                                 <a href="#">Profil</a>
                             </div>
-                             
+
                             <div class="col-xs-6 text-center">
                                 <a href="#">Password</a>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            
+
                             <div class="pull-right">
                                 <?= Html::a(
                                     'Sign out',
@@ -58,7 +58,6 @@ use yii\helpers\Html;
                 </li>
 
                 <!-- User Account: style can be found in dropdown.less -->
-
             </ul>
         </div>
     </nav>
