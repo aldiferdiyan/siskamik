@@ -47,4 +47,8 @@ class Pembayaran extends \yii\db\ActiveRecord
             'jumlah_bayar' => 'Jumlah Bayar',
         ];
     }
+    public function getMahasiswa()
+    {
+        return $this->hasOne(MataKuliah::className(), ['nim' => 'nim']);
+    }
 }

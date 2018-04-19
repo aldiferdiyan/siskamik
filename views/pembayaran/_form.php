@@ -10,8 +10,9 @@ use yii\widgets\ActiveForm;
 <div class="box">
 <div class="box-body">
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'nim')->textInput(['maxlength' => true]) ?>
+    <?php $list_nim = \yii\helpers\ArrayHelper::map(\app\models\Mahasiswa::find()->all(),"nim",'nim');
+ ?>
+    <?= $form->field($model, 'nim')->dropDownList($list_nim) ?>
 
     <?= $form->field($model, 'bulan')->textInput() ?>
 
