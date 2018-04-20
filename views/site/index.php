@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3><?php //echo mysqli_num_rows($data_user); ?></h3>
-            <p>Data User</p>
+            <h3><?php echo \app\models\Mahasiswa::find()->count(); ?></h3>
+            <p>Data Mahasiswa</p>
           </div>
           <div class="icon">
             <i class="fa fa-user"></i>
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
       <div class="col-md-3">
         <div class="small-box bg-green">
           <div class="inner">
-            <h3><?php //echo mysqli_num_rows($data_matkul); ?></h3>
+            <h3><?php echo \app\models\MataKuliah::find()->count(); ?></h3>
             <p>Data Mata kuliah</p>
           </div>
           <div class="icon">
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
       <div class="col-md-3">
         <div class="small-box bg-red">
           <div class="inner">
-            <h3><?php //echo mysqli_num_rows($jadwal); ?></h3>
+            <h3><?php echo \app\models\Jadwal::find()->count(); ?></h3>
             <p>Data Jadwal</p>
           </div>
           <div class="icon">
