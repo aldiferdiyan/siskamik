@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Nilai */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Nilais', 'url' => ['index']];
+$this->title = $model->nim;
+$this->params['breadcrumbs'][] = ['label' => 'Nilai', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box">
@@ -28,8 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
       <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-          'id',
-          'mata_kuliah',
+          [
+            'label'=>"Matkul",
+            "value"=>$model->matkul->nama_mata_kuliah
+          ],
           'nim',
           'nilai',
         ],

@@ -46,4 +46,8 @@ class Nilai extends \yii\db\ActiveRecord
             'nilai' => 'Nilai',
         ];
     }
+    public function getMatkul()
+    {
+        return $this->hasOne(MataKuliah::className(), ['id' => 'mata_kuliah']);
+    }
 }

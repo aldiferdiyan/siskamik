@@ -12,6 +12,7 @@ use app\models\Nilai;
  */
 class NilaiSearch extends Nilai
 {
+    public $matkul;
     /**
      * @inheritdoc
      */
@@ -19,7 +20,7 @@ class NilaiSearch extends Nilai
     {
         return [
             [['id', 'nim', 'nilai'], 'integer'],
-            [['mata_kuliah'], 'safe'],
+            [['mata_kuliah','matkul'], 'safe'],
         ];
     }
 
@@ -41,14 +42,17 @@ class NilaiSearch extends Nilai
      */
     public function search($params)
     {
-        $query = Nilai::find();
+        $query = Nilai::find()->innerJoinWith('matkul', true);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
+        $dataProvider->sort->attributes['matkul'] = [
+            'asc' => ['nama_mata_kuliah' => SORT_ASC],
+            'desc' => ['nama_mata_kuliah' => SORT_DESC],
+        ];
         $this->load($params);
 
         if (!$this->validate()) {
@@ -65,6 +69,7 @@ class NilaiSearch extends Nilai
         ]);
 
         $query->andFilterWhere(['like', 'mata_kuliah', $this->mata_kuliah]);
+        $query->andFilterWhere(['like', 'nama_mata_kuliah', $this->matkul]);
 
         return $dataProvider;
     }

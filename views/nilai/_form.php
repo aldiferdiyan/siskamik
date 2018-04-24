@@ -12,9 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'mata_kuliah')->textInput(['maxlength' => true]) ?>
+    <?php
+    $list_matkul = \yii\helpers\ArrayHelper::map(\app\models\MataKuliah::find()->all(),"id","nama_mata_kuliah");
+    $list_nim = \yii\helpers\ArrayHelper::map(\app\models\Mahasiswa::find()->all(),"nim",'nim');
+     ?>
+    <?= $form->field($model, 'mata_kuliah')->dropDownList($list_matkul) ?>
 
-    <?= $form->field($model, 'nim')->textInput() ?>
+    <?= $form->field($model, 'nim')->dropDownList($list_nim) ?>
 
     <?= $form->field($model, 'nilai')->textInput() ?>
 
